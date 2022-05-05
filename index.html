@@ -5,7 +5,6 @@
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
-  <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
@@ -14,10 +13,10 @@
     <div class="site-nav w1200">
       <p class="sn-back-home">
         <i class="layui-icon layui-icon-home"></i>
-        <a href="#">首页</a>
+        <a href="#none">首页</a>
       </p>
       <div class="sn-quick-menu">
-        <div class="login"><a href="login.html">登录</a></div>
+        <div class="login"><a href="./login.html">登录</a></div>
         <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
       </div>
     </div>
@@ -146,6 +145,9 @@
         </div>
       </div>
     </div>
+
+
+    <!-- 轮播图 -->
     <div class="floors">
       <div class="sk">
         <div class="sk_inner w1200">
@@ -155,11 +157,13 @@
             </a>
           </div>
           <div class="sk_bd">
-            <div class="layui-carousel" id="test1">
-              <div carousel-item>
-                <div class="item-box">
+            <div class="layui-carousel1" id="test1">
+              <ul class="carousel-item">
+                <li class="item-box1 ac lunbo1" id="">
                   <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img2.jpg"></a>
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img2.jpg">
+                    </a>
                     <div class="title">宝宝五彩袜棉质舒服</div>
                     <div class="price">
                       <span>￥49.00</span>
@@ -167,7 +171,9 @@
                     </div>
                   </div>
                   <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img3.jpg"></a>
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img3.jpg">
+                    </a>
                     <div class="title">宝宝五彩袜棉质舒服</div>
                     <div class="price">
                       <span>￥49.00</span>
@@ -175,7 +181,9 @@
                     </div>
                   </div>
                   <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img4.jpg"></a>
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img4.jpg">
+                    </a>
                     <div class="title">宝宝五彩袜棉质舒服</div>
                     <div class="price">
                       <span>￥49.00</span>
@@ -183,25 +191,21 @@
                     </div>
                   </div>
                   <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img5.jpg"></a>
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img5.jpg">
+                    </a>
                     <div class="title">宝宝五彩袜棉质舒服</div>
                     <div class="price">
                       <span>￥49.00</span>
                       <del>￥99.00</del>
                     </div>
                   </div>
-                </div>
-                <div class="item-box">
+                </li>
+                <li class="item-box2 lunbo1" id="">
                   <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img2.jpg"></a>
-                    <div class="title">宝宝五彩袜棉质舒服</div>
-                    <div class="price">
-                      <span>￥49.00</span>
-                      <del>￥99.00</del>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img3.jpg"></a>
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img2.jpg">
+                    </a>
                     <div class="title">宝宝五彩袜棉质舒服</div>
                     <div class="price">
                       <span>￥49.00</span>
@@ -209,7 +213,9 @@
                     </div>
                   </div>
                   <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img4.jpg"></a>
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img2.jpg">
+                    </a>
                     <div class="title">宝宝五彩袜棉质舒服</div>
                     <div class="price">
                       <span>￥49.00</span>
@@ -217,15 +223,28 @@
                     </div>
                   </div>
                   <div class="item">
-                    <a href="./details.html"><img src="res/static/img/s_img5.jpg"></a>
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img2.jpg">
+                    </a>
                     <div class="title">宝宝五彩袜棉质舒服</div>
                     <div class="price">
                       <span>￥49.00</span>
                       <del>￥99.00</del>
                     </div>
                   </div>
-                </div>
-              </div>
+                  <div class="item">
+                    <a href="./details.html">
+                      <img src="res/static/img/s_img2.jpg">
+                    </a>
+                    <div class="title">宝宝五彩袜棉质舒服</div>
+                    <div class="price">
+                      <span>￥49.00</span>
+                      <del>￥99.00</del>
+                    </div>
+                  </div>
+                </li>
+                <span id="next">></span>
+              </ul>
             </div>
           </div>
         </div>    
@@ -405,40 +424,7 @@
       <p class="coty">母婴商城版权所有 &copy; 2012-2020 More Templates <a href="http://sskoo.taobao.com/" target="_blank" title="sskoo">sskoo</a> - Collect from <a href="http://sskoo.taobao.com/" title="sskoo" target="_blank">sskoo</a></p>
     </div>
   </div>
-  <script type="text/javascript">
 
-layui.config({
-    base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
-  }).use(['mm','carousel'],function(){
-      var carousel = layui.carousel,
-     mm = layui.mm;
-     var option = {
-        elem: '#test1'
-        ,width: '100%' //设置容器宽度
-        ,arrow: 'always'
-        ,height:'298' 
-        ,indicator:'none'
-      }
-      carousel.render(option);
-      // 模版引擎导入
-     // var ins = carousel.render(option);
-     // var html = demo.innerHTML;
-     // var listCont = document.getElementById('list-cont');
-     // // console.log(layui.router("#/about.html"))
-     //  mm.request({
-     //    url: '../json/index.json',
-     //    success : function(res){
-     //      console.log(res)
-     //      listCont.innerHTML = mm.renderHtml(html,res)
-     //      ins.reload(option);
-     //    },
-     //    error: function(res){
-     //      console.log(res);
-     //    }
-     //  })
-    
-
-});
-  </script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

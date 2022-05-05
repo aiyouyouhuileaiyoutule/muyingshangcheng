@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    #div1 {
+      width: 850px;
+      height: 500px;
+      margin: 50px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #div1 ul li {
+      height: 500px;
+      /* 看不见图片 */
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      transition: opacity 1.5s;
+    }
+
+    #div1 ul li.ac {
+      z-index: 5;
+      opacity: 1;
+    }
+
+    #div1 ol {
+      position: absolute;
+      right: 10%;
+      bottom: 10px;
+      z-index: 6
+    }
+
+    #div1 ol li {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      margin-left: 5px;
+      float: left;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #div1 ol li.ac {
+      background: red;
+      color: #fff;
+    }
+
+    #div1>a {
+      text-decoration: none;
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      height: 40px;
+      line-height: 32px;
+      text-align: center;
+      width: 40px;
+      font-size: 40px;
+      vertical-align: middle;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 6;
+    }
+
+    #goPrev {
+      left: 0;
+    }
+
+    #goNext {
+      right: 0;
+    }
+
+    img {
+      width: 850px;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div1">
+    <ul>
+      <li class="ac">
+        <a href="javascript:alert(0);">
+          <img src="../images/1.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert(1);">
+          <img src="../images/2.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert(2);">
+          <img src="../images/3.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert(3);">
+          <img src="../images/4.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert(4);">
+          <img src="../images/5.jpg" />
+        </a>
+      </li>
+    </ul>
+    <ol>
+      <li class="ac">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+    <a href="javascript:;" id="goPrev">&laquo;</a>
+    <a href="javascript:;" id="goNext">&raquo;</a>
+  </div>
+
+
+
+  
+  <script>
+    // 1 获取节点
+    const ulLisObj = document.querySelectorAll('ul li');
+    const olLisObj = document.querySelectorAll('ol li');
+    const prev = document.querySelector('#goPrev');
+    const next = document.querySelector('#goNext');
+
+    // 2 设置变量
+    let index = 0; // 要出来的图片索引
+    let lastIndex = 0; // 要进去的图片缩影
+    let times;  // 定时器返回值
+
+
+    // 3点击ol 中的li,实现图片切换
+    // olLisObj.forEach((li, key) => {
+    //   // console.log(li);
+    //   // 3-1 给li绑定点击事件
+    //   li.onclick = function () {
+    //     // console.log(this);
+    //     // 将当前index值给lastIndex
+    //     // 将当前li对象的key赋值给index
+    //     lastIndex = index;
+    //     index = key;
+    //     change();
+
+    //   }
+
+    // });
+
+    // 4 点击左边按钮,上一张上一张  index值为--
+    // prev.onclick = function () {
+    //   // 4-1 将index的值给lastIndex
+    //   lastIndex = index;
+    //   index--;
+    //   // console.log(index);
+    //   // 当index值为0,则赋值最大索引
+    //   if (index < 0) {
+    //     index = olLisObj.length - 1;
+    //   }
+    //   change();
+    // }
+    // 5 右边按钮,下一张,下一章  index++
+    // obj.say =function(){}
+    next.onclick = function () {
+      lastIndex = index;
+      index++;
+      if (index > olLisObj.length - 1) {
+        index = 0;
+      }
+      change();
+    }
+
+    //  6 轮播的实现
+    function autoPaly() {
+      times = setInterval(() => {
+        next.onclick();
+      }, 3000)
+
+    }
+    autoPaly();
+    // 给div1 设置移入和移除事件
+    next.parentNode.onmouseover = function () {
+      clearInterval(times)
+    }
+
+    next.parentNode.onmouseout = function () {
+      autoPaly();
+    }
+
+    // 实现图片切换,设置和取消ac类
+    function change() {
+      // console.log(lastIndex, index);
+      // 取消ol和ul中li有ac类的
+      olLisObj[lastIndex].className = '';
+      ulLisObj[lastIndex].className = '';
+
+      // 设置当前选中的图片和序列号
+      olLisObj[index].className = 'ac';
+      ulLisObj[index].className = 'ac';
+    }
+
+  </script>
+</body>
+
+</html>

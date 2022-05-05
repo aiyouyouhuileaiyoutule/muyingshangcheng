@@ -1,6 +1,5 @@
 /*
 *@Name: 母婴商城
-*@Author: xuzhiwen
 *@Copyright:layui.com
 */
 
@@ -36,6 +35,45 @@ i{font-style: normal;}
 .header .mallSearch input{height: 38px; line-height: 38px; width: 436px; float: left; border:none; position: relative; z-index: 2; background: none;}
 .header .mallSearch button{width: 58px; height: 38px; line-height: 38px; float: left; background: #cfb2f6; border-radius:0
 ;}
+#test1{
+  overflow: hidden;
+  
+}
+.carousel-item{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 300px;
+}
+
+.carousel-item li{
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      transition: opacity 1.5s;
+}
+
+.carousel-item .ac{
+  z-index: 5;
+  opacity: 1;
+}
+
+#next{
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
+  position: absolute;
+  left: 95%;
+  top: 45%;
+  color: wheat;
+  line-height: 50px;
+  text-align: center;
+  background: rgba(225, 226, 133, 0.3);
+}
+
 /*end-header*/
 
 .tlinks {
@@ -145,13 +183,27 @@ i{font-style: normal;}
 .commodity-content .commod-cont .right-cont .sort a{width: 58px; height: 26px; line-height: 26px; font-size: 14px; color: #333333; border:1px solid #eaeaea; margin-left: -1px; float: left; background: #fff; background:#fff url(../img/sort-arrow.png) no-repeat 41px 0; text-indent: 9px;}
 .commodity-content .commod-cont .right-cont .sort a.active{background-position: 41px -26px;}
 .commodity-content .commod-cont .right-cont .prod-number{line-height: 44px; font-size: 16px; padding-left: 7px;}
-.commodity-content .commod-cont .right-cont .cont-list .item{float: left; width: 280px; height: 366px; border:1px solid #eaeaea; background: #fff; margin:0 47px 60px 0;}
-.commodity-content .commod-cont .right-cont .cont-list .item .img{border-bottom: 1px solid #eaeaea}
+.commodity-content .commod-cont .right-cont .cont-list .item{float: left; width: 280px; height: 450px; border:1px solid #eaeaea; background: #fff; margin:0 47px 60px 0;}
+.commodity-content .commod-cont .right-cont .cont-list .item .img{border-bottom: 1px solid #eaeaea ; height: 280px;}
 .commodity-content .commod-cont .right-cont .cont-list .item .text{padding:14px 0 0 14px;}
-.commodity-content .commod-cont .right-cont .cont-list .title{color: #333333; font-size: 16px; margin-bottom: 14px;}
+.commodity-content .commod-cont .right-cont .cont-list .title{color: #333333; font-size: 16px; margin-bottom: 14px; height: 70px;}
 .commodity-content .commod-cont .right-cont .cont-list .price{position: relative;}
 .commodity-content .commod-cont .right-cont .cont-list .pri{color: #ee0000;}
 .commodity-content .commod-cont .right-cont .cont-list .nub{position: absolute; right: 13px; color:#999999;}
+
+.commodity-content .commod-cont .right-cont .cont-list .item .img img{
+  width: 280px;
+  height: 280px;
+}
+.commodity-content .commod-cont .right-cont .cont-list #aaa {
+  width: 280px;
+  height: 50px;
+  display: block;
+  color: white;
+  background-color: red;
+  text-align: center;
+  line-height: 50px;
+}
 /*end-commodity*/
 
 
@@ -205,7 +257,15 @@ i{font-style: normal;}
 .datails-content .detail h4{line-height: 42px; width: 100px; text-align: center; border-bottom: 2px solid #888888; font-size: 18px; cursor: pointer; color: #888888;}
 .datails-content .detail .item{border:1px solid #ececec;}
 .box{position: relative;}
-.small{position: relative;}
+.small{
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+.small img {
+  width: 400px;
+  height: 400px;
+}
 .big{width: 400px; height: 400px; overflow: hidden; position: absolute; top: 0; left: 450px; display: none; z-index: 55;}
 .big img{
   position: absolute;
@@ -311,10 +371,10 @@ i{font-style: normal;}
 .login-content .login-bg .login-cont .layui-inline,.login-content .login-bg .login-cont .layui-input-inline{width: 100%; position: relative;}
 .login-content .login-bg .login-cont .layui-input-inline .iphone-icon{position: absolute; top: 8px; left: 10px; color: #d3d3d3; font-size: 20px;}
 .login-content .login-bg .login-cont .iphone{margin-bottom: 20px;}
-.login-content .login-bg .login-cont .iphone .layui-input{padding-left: 40px;}
+/* .login-content .login-bg .login-cont .iphone .layui-input{padding-left: 40px;} */
 .login-content .login-bg .login-cont .veri-code .layui-btn{width: 102px; background: #eeeeee; text-align: center; color: #333; height: 36px; line-height: 36px; display: inline-block; border:none; cursor: pointer; position: absolute; top: 1px; right: 1px; font-size: 12px; padding:0 14px;}
 .login-content .login-bg .login-cont .login-btn .layui-input-block{margin-left: 0; padding-top: 25px;}
-.login-content .login-bg .login-cont .login-btn .layui-input-block button{width: 100%; background: #cfb2f6; font-size: 18px;}
+.login-content .login-bg .login-cont .login-btn .layui-input-block .btn{width: 100%; background: #cfb2f6; font-size: 18px;}
 /*end-login*/
 
 
